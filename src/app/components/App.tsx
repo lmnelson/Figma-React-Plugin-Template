@@ -4,14 +4,12 @@ import {Page} from '../../constants';
 import {RouteContext} from '../context/route-context';
 import RoutingContainer from './RoutingContainer';
 
-declare function require(path: string): any;
-
 const App = function ({}) {
   const to = (newRoute: Page) => {
-    setRoute({...route, route: newRoute});
+    setRouter({...router, route: newRoute});
   };
 
-  const [route, setRoute] = React.useState({
+  const [router, setRouter] = React.useState({
     route: Page.Root,
     to: to,
   });
@@ -26,7 +24,7 @@ const App = function ({}) {
   }, []);
 
   return (
-    <RouteContext.Provider value={route}>
+    <RouteContext.Provider value={router}>
       <RoutingContainer />
     </RouteContext.Provider>
   );

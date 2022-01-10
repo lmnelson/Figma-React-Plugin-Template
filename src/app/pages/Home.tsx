@@ -1,17 +1,17 @@
 import * as React from 'react';
-import {RouteContext} from '../context/route-context';
 import {Page} from '../../constants';
+import NavigationList from '../components/NavigationList';
 
 const Home = () => {
+  const homeListItems = [
+    {name: 'Theme', route: Page.Theme, current: false},
+    {name: 'Components', route: Page.Components, current: false},
+  ];
+
   return (
-    <RouteContext.Consumer>
-      {(route) => (
-        <div>
-          <h1>Home Page</h1>
-          <button onClick={() => route.to(Page.Components)}>Go to Components</button>
-        </div>
-      )}
-    </RouteContext.Consumer>
+    <div>
+      <NavigationList listItems={homeListItems} />
+    </div>
   );
 };
 export default Home;

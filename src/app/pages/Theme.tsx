@@ -1,9 +1,8 @@
 import * as React from 'react';
 import {RouteContext} from '../context/route-context';
 import {Page} from '../../constants';
-import Breadcrumb from '../components/Breadcrumb';
 
-const Components = () => {
+const Theme = () => {
   return (
     <RouteContext.Consumer>
       {(router) => (
@@ -15,10 +14,10 @@ const Components = () => {
           >
             Back
           </button>
-          <h1>Components Page</h1>
+          <h1>Theme Page</h1>
         </div>
       )}
     </RouteContext.Consumer>
   );
 };
-export default Components;
+export default Theme;

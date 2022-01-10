@@ -3,6 +3,7 @@ import {RouteContext} from '../context/route-context';
 import {Page} from '../../constants';
 import Home from '../pages/Home';
 import Components from '../pages/Components';
+import Theme from '../pages/Theme';
 
 const RoutingContainer = () => {
   return (
@@ -14,6 +15,8 @@ const RoutingContainer = () => {
               return <Home />;
             case Page.Components:
               return <Components />;
+            case Page.Theme:
+              return <Theme />;
           }
         }}
       </RouteContext.Consumer>
@@ -22,17 +25,3 @@ const RoutingContainer = () => {
 };
 
 export default RoutingContainer;
-
-// import Breadcrumb from './Breadcrumb';
-// import NavigationList from './NavigationList';
-
-// const pages = [
-//   {name: 'Components', href: '#', current: false},
-//   {name: 'Atoms', href: '#', current: true},
-// ];
-
-// const componentList = [
-//   {name: 'Buttons', href: '#', current: true},
-//   {name: 'Badges', href: '#', current: false},
-//   {name: 'Checkboxes', href: '#', current: false},
-// ];
