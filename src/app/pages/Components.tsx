@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {RouteContext} from '../context/route-context';
 import {Page} from '../../constants';
-import Breadcrumb from '../components/Breadcrumb';
 
 const Components = () => {
   return (
