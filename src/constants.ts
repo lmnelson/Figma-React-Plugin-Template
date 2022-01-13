@@ -1,8 +1,8 @@
 export enum Page {
   Root = 'root',
-  ComponentDetails = 'component-details',
-  Components = 'components',
-  Theme = 'theme',
+  ComponentDetails = 'Component details',
+  Components = 'Components',
+  Theme = 'Theme',
 }
 export enum Component {
   Button = 'button',

@@ -9,7 +9,7 @@ const Home = () => {
   ];
 
   return (
-    <div>
+    <div className="wrapper h-screen bg-slate-100">
       <NavigationList listItems={homeListItems} />
     </div>
   );

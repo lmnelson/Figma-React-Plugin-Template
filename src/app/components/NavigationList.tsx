@@ -9,7 +9,7 @@ const NavigationList = ({listItems}) => {
   return (
     <RouteContext.Consumer>
       {(router) => (
-        <div className="bg-white overflow-hidden sm:rounded-lg mt-2 p-2">
+        <div className="overflow-hidden sm:rounded-lg p-2">
           <nav className="space-y-1" aria-label="Sidebar">
             {listItems.map((item) => (
               <button
