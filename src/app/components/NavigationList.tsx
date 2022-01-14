@@ -1,27 +1,24 @@
 import * as React from 'react';
 import {RouteContext} from '../context/route-context';
+import {Route} from '../types/routes';
 
-const NavigationList = ({listItems}) => {
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(' ');
-  }
+interface NavigationListProps {
+  routes: Route[];
+}
 
+const NavigationList = ({routes}: NavigationListProps) => {
   return (
     <RouteContext.Consumer>
       {(router) => (
         <div className="overflow-hidden sm:rounded-lg p-2">
           <nav className="space-y-1" aria-label="Sidebar">
-            {listItems.map((item) => (
+            {routes.map((route: Route) => (
               <button
-                key={item.name}
-                onClick={() => router.to(item.route)}
-                className={classNames(
-                  item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
-                  'flex items-center px-3 py-2 text-sm font-medium rounded-md w-full'
-                )}
-                aria-current={item.current ? 'page' : undefined}
+                key={route.title}
+                onClick={() => router.to(route)}
+                className={'flex items-center px-3 py-2 text-sm font-medium rounded-md w-full'}
               >
-                <span className="truncate">{item.name}</span>
+                <span className="truncate">{route.title}</span>
               </button>
             ))}
           </nav>

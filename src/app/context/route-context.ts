@@ -1,9 +1,12 @@
 import * as React from 'react';
-import {Page} from '../../constants';
+import {route} from '../routes';
+import {Route} from '../types/routes';
 
 export const RouteContext = React.createContext({
-  route: Page.Root,
-  to: (newRoute: Page) => {
+  title: route.ROOT.title,
+  path: route.ROOT.path,
+  previousPath: null,
+  to: (newRoute: Route) => {
     newRoute;
   },
 });

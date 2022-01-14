@@ -1,16 +1,19 @@
 import * as React from 'react';
 import '../styles/ui.css';
-import {Page} from '../../constants';
+import {Route} from '../types/routes';
 import {RouteContext} from '../context/route-context';
+import {route} from '../routes';
 import RoutingContainer from './RoutingContainer';
 
 const App = function ({}) {
-  const to = (newRoute: Page) => {
-    setRouter({...router, route: newRoute});
+  const to = (newRoute: Route) => {
+    setRouter({...router, ...newRoute});
   };
 
   const [router, setRouter] = React.useState({
-    route: Page.Root,
+    path: route.ROOT.path,
+    title: route.ROOT.title,
+    previousPath: null,
     to: to,
   });
 

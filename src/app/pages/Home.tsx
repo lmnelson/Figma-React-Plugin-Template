@@ -1,16 +1,14 @@
 import * as React from 'react';
-import {Page} from '../../constants';
+
+import {route} from '../routes';
 import NavigationList from '../components/NavigationList';
 
 const Home = () => {
-  const homeListItems = [
-    {name: 'Theme', route: Page.Theme, current: false},
-    {name: 'Components', route: Page.Components, current: false},
-  ];
+  const homePageRoutes = [route.PAGE_ONE, route.PAGE_TWO];
 
   return (
     <div className="wrapper h-screen bg-slate-100">
-      <NavigationList listItems={homeListItems} />
+      <NavigationList routes={homePageRoutes} />
     </div>
   );
 };
