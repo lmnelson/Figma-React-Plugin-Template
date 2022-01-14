@@ -1,10 +1,11 @@
 ![cover](https://i.ibb.co/WP6X1MB/Clean-Shot-2021-12-18-at-20-29-03.jpg)
-# Figma Plugin Template with React & Tailwind CSS.
+# Figma React Plugin Template.
 
-This template builds off of the original [Figma Plugin React Template](https://github.com/nirsky/figma-plugin-react-template) It has updated dependencies in order to support Tailwind CSS.
+This template builds off of the original [Figma Plugin React Template](https://github.com/nirsky/figma-plugin-react-template) It also includes a few extras for building Figma Plugins:
 
-## Why
-Tailwind CSS is great, especially when it comes to prototyping applications. Many of times, Figma plugins are simple one-off solutions built to solve for a limitation of Figma. Because of this, Tailwind is naturally a great choice for building Figma plugins.
+⭐️ Tailwind CSS
+⭐️ Simple contextual router
+⭐️ Messaging scaffold for sending events
 
 ## Quickstart
 * Run `npm install` to install dependencies.
