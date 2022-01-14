@@ -1,11 +1,10 @@
-![cover](https://i.ibb.co/WP6X1MB/Clean-Shot-2021-12-18-at-20-29-03.jpg)
 # Figma React Plugin Template.
 
-This template builds off of the original [Figma Plugin React Template](https://github.com/nirsky/figma-plugin-react-template) It also includes a few extras for building Figma Plugins:
+This template builds off of the original [Figma Plugin React Template](https://github.com/nirsky/figma-plugin-react-template) It also includes a few extras for building Figma plugins:
 
-⭐️ Tailwind CSS
-⭐️ Simple contextual router
-⭐️ Messaging scaffold for sending events
+- ⭐️ Tailwind CSS
+- ⭐️ Simple contextual router
+- ⭐️ Messaging scaffold for sending events
 
 ## Quickstart
 * Run `npm install` to install dependencies.
