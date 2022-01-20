@@ -1,22 +1,10 @@
 import * as React from 'react';
-import '../styles/ui.css';
-import {Route} from '../types/routes';
-import {RouteContext} from '../context/route-context';
-import {route} from '../routes';
 import RoutingContainer from './RoutingContainer';
+import {AppContextProvider} from '../context/app-context';
+
+import '../styles/ui.css';
 
 const App = function ({}) {
-  const to = (newRoute: Route) => {
-    setRouter({...router, ...newRoute});
-  };
-
-  const [router, setRouter] = React.useState({
-    path: route.ROOT.path,
-    title: route.ROOT.title,
-    previousPath: null,
-    to: to,
-  });
-
   React.useEffect(() => {
     window.onmessage = (event) => {
       const {type, message} = event.data.pluginMessage;
@@ -27,9 +15,9 @@ const App = function ({}) {
   }, []);
 
   return (
-    <RouteContext.Provider value={router}>
+    <AppContextProvider>
       <RoutingContainer />
-    </RouteContext.Provider>
+    </AppContextProvider>
   );
 };
 

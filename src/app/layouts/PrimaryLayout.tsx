@@ -1,21 +1,19 @@
 import * as React from 'react';
 import Navbar from '../components/Navbar';
-import {RouteContext} from '../context/route-context';
+import {useLocation} from 'react-router';
 
 interface PrimaryLayoutProps {
   children: React.ReactNode;
 }
 
 const PrimaryLayout = ({children}: PrimaryLayoutProps) => {
+  const location = useLocation();
+  console.log(location);
   return (
-    <RouteContext.Consumer>
-      {(route) => (
-        <div className="wrapper h-screen bg-slate-100">
-          <Navbar title={route.title} />
-          <div className="content p-2">{children}</div>
-        </div>
-      )}
-    </RouteContext.Consumer>
+    <div className="wrapper h-screen bg-slate-100">
+      <Navbar title={location.pathname} />
+      <div className="content p-2">{children}</div>
+    </div>
   );
 };
 

@@ -1,27 +1,26 @@
 import * as React from 'react';
-import {RouteContext} from '../context/route-context';
-import {route} from '../routes';
-import Home from '../pages/Home';
+import {routes} from '../routes';
 import PageOne from '../pages/PageOne';
 import PageTwo from '../pages/PageTwo';
+import {MemoryRouter, Routes, Route, Outlet} from 'react-router';
 import PrimaryLayout from '../layouts/PrimaryLayout';
 
 const RoutingContainer = () => {
   return (
-    <PrimaryLayout>
-      <RouteContext.Consumer>
-        {(value) => {
-          switch (value.path) {
-            case route.ROOT.path:
-              return <Home />;
-            case route.PAGE_ONE.path:
-              return <PageOne />;
-            case route.PAGE_TWO.path:
-              return <PageTwo />;
+    <MemoryRouter initialIndex={0} initialEntries={[`${routes.PAGE_ONE.path}`]}>
+      <Routes>
+        <Route
+          element={
+            <PrimaryLayout>
+              <Outlet />
+            </PrimaryLayout>
           }
-        }}
-      </RouteContext.Consumer>
-    </PrimaryLayout>
+        >
+          <Route path={routes.PAGE_ONE.path} element={<PageOne />} />
+          <Route path={routes.PAGE_TWO.path} element={<PageTwo />} />
+        </Route>
+      </Routes>
+    </MemoryRouter>
   );
 };
 
